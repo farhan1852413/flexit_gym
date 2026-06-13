@@ -22,6 +22,10 @@ app.use(cors({
 }));
 app.use(express.json()); // parse JSON bodies
 
+app.get("/", (req, res) => {
+  res.send("Flexit Backend is running 🚀");
+});
+
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
