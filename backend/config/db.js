@@ -6,12 +6,11 @@ dotenv.config();
 
 const connectDB = async () => {
   try {
-    const mongoUri = 'mongodb://127.0.0.1:27017/gym';
-    const conn = await mongoose.connect(mongoUri);
+    const conn = await mongoose.connect(process.env.MONGO_URI); // ✅ use env var
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.error('MongoDB connection error:', error.message);
-    // Continue without exiting; the app may still function for routes not requiring DB
+    process.exit(1); // ✅ exit so Render shows the real error
   }
 };
 
