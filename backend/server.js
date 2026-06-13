@@ -19,7 +19,7 @@ app.use(helmet());
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://YOUR-VERCEL-URL.vercel.app'
+    'https://flexit-gym.vercel.app'
   ],
   credentials: true
 }));
