@@ -15,16 +15,24 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(helmet());
-app.use(cors({
+app.use(helmet({
+  crossOriginResourcePolicy: false // ✅ helmet can block CORS, disable it
+}));
+
+const corsOptions = {
   origin: [
     'http://localhost:5173',
     'https://flexit-gym.vercel.app'
   ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // ✅ add OPTIONS
+  allowedHeaders: ['Content-Type', 'Authorization'],    // ✅ add this
   credentials: true
-}));
-app.use(express.json()); // parse JSON bodies
+}
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // ✅ handle preflight for all routes
+
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Flexit Backend is running 🚀");
