@@ -17,7 +17,10 @@ const app = express();
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173',
+    'https://YOUR-VERCEL-URL.vercel.app'
+  ],
   credentials: true
 }));
 app.use(express.json()); // parse JSON bodies
