@@ -45,19 +45,20 @@ export default function Careers() {
             Inside the FLEXIT Lab, transformation isn't a wish — it's an engineering requirement. Meet the victors who redefined their limits.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            
-              href="#victors"
-              className="inline-block bg-red-600 hover:bg-red-700 text-white px-10 py-4 font-lexend font-black text-sm uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_30px_rgba(220,38,38,0.5)]"
-            >
-              Explore The Vault →
-            
-            <button
-              onClick={() => alert('Submit your story to success@flexit.com')}
-              className="inline-block border border-zinc-600 hover:border-red-600 text-white px-10 py-4 font-lexend font-black text-sm uppercase tracking-widest transition-all duration-300 hover:bg-red-600/10"
-            >
-              Submit Your Story
-            </button>
-          </div>
+  <a
+    href="#victors"
+    className="inline-block bg-red-600 hover:bg-red-700 text-white px-10 py-4 font-lexend font-black text-sm uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_30px_rgba(220,38,38,0.5)]"
+  >
+    Explore The Vault {"→"}
+  </a>
+
+  <button
+    onClick={() => alert('Submit your story to success@flexit.com')}
+    className="inline-block border border-zinc-600 hover:border-red-600 text-white px-10 py-4 font-lexend font-black text-sm uppercase tracking-widest transition-all duration-300 hover:bg-red-600/10"
+  >
+    Submit Your Story
+  </button>
+</div>
         </div>
 
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
